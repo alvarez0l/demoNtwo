@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/style.css">
+    <title>Я буду кушац</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.php">Главная</a></li>
+                    <?php
+                        require_once __DIR__.'/session.php';
+                        $user = null;
+                        require_once __DIR__.'/getUser.php';
+
+                        if ($user == null) {
+                    ?>
+                        <li><a href="log_form.php">Вход</a></li>
+                        <li><a href="reg_form.php">Регистрация</a></li>
+                    <?php 
+                        }
+                        if ($user) { 
+                            ?><li><a href="orders.php">Заказы</a></li><?php
+                            if ($user['type'] == 'Admin') { ?>
+                                <li><a id="a-admin" href="admin_panel.php">Admin's Panel</a></li>
+                            <?php } ?>
+                            <li><a href="orderAdd_form.php">Забронировать</a></li>
+                            <form class="mt-5" method="post" action="logout.php">
+                                    <button type="submit" class="btn" id="logout-btn">Выйти</button>
+                            </form>
+                    <?php } ?>
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
+            <h2>Веб-приложение ресторана "Я буду кушац"</h2>
+            <p class="content_p">
+                <span>Добро пожаловать в веб-приложение ресторана "Я буду кушац"!</span>
+                <span>Здесь вы можете забронировать стол на нужную дату и время.</span>
+            </p>
+            <div class="index-photo"></div>
+            <a href="orderAdd_form.php"><button class="btn">Забронировать стол</button></a>
+        </div>
+    </div>
+</body>
+<footer>
+    <div class="footer">
+        <span>Нужна помощь? +7 (978)-900-90-90 - Звонок бесплатный</span>
+        <span>Проект веб-приложение "Я буду кушац". Все права защищены.</span>
+    </div>
+</footer>
+</html>

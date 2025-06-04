@@ -1,0 +1,268 @@
+body {
+    background-color: rgb(252, 239, 197);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.alert-danger {
+    color: red;
+}
+
+.header {
+    width: 100%;
+    background-color: rgb(231, 221, 188);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 13px;
+    text-align: center;
+    align-items: center;
+}
+    .menu li {
+        padding: 0 10px;
+        list-style: none;
+    }
+    .menu a {
+        text-decoration: none;
+        color: black;
+    }
+    .menu a:hover {
+        color: rgb(41, 41, 41);
+    }
+
+#a-admin {
+    color: white;
+    background-color: red;
+    padding: 5px;
+    border-radius: 25px;
+}
+
+#a-admin:hover {
+    background-color: rgb(180, 23, 23);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+}
+
+.input, .btn {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 300px;
+    height: 15px;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+}
+
+.btn {
+    height: auto;
+    background-color: rgb(169, 226, 152);
+}
+
+.btn:hover {
+    color: white;
+    background-color: rgb(53, 110, 53);
+    cursor: pointer;
+}
+
+#logout-btn {
+    width: auto;
+    margin: 0 10px;
+    padding: 8px;
+    background-color: rgb(96, 197, 96);
+    border-radius: 25px;
+}
+
+#logout-btn:hover {
+    color: white;
+    background-color: rgb(53, 110, 53);
+    cursor: pointer;
+}
+
+.btn-sub {
+    background-color: rgb(96, 197, 96);
+}
+    .btn-sub:hover {
+        color: white;
+        background-color: rgb(53, 110, 53);
+        cursor: pointer;
+    }
+
+/* INDEX */
+
+.index-photo {
+    width: 900px;
+    height: 500px;
+    background-image: url(img/rest-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+/* CATALOG */
+
+.catalog {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 1300px;
+    height: auto;
+}
+
+.catalog-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: auto;
+    margin: 20px;
+}
+
+.catalog-card span {
+    padding: 3px 0;
+}
+
+.catalog-head {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    width: 250px;
+    height: 300px;
+}
+
+.catalog-head span {
+    width: 250px;
+}
+
+.catalog-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 250px;
+}
+
+.img-prod {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    align-items: flex-end;
+}
+
+#cart-btn {
+    margin: 10px 0;
+    width: 100%;
+    background-color: rgb(169, 226, 152);
+}
+
+#cart-btn:hover {
+    color: white;
+    background-color: rgb(106, 151, 93);
+    cursor: pointer;
+}
+
+.form {
+    width: 100%;
+}
+
+/* ORDERS */
+
+table {
+    padding: 25px 0;
+}
+
+td {
+    padding: 0 13px;
+}
+
+/* ADMIN'S PANEL */
+
+#edit-btn {
+    border: none;
+    padding: 5px;
+    margin: 0;
+    background-color: rgb(194, 155, 71);
+    border-radius: 25px;
+}
+
+#edit-btn:hover {
+    background-color: rgb(117, 90, 30);
+    color: white;
+    cursor: pointer;
+}
+
+#delete-btn {
+    border: none;
+    padding: 5px;
+    color: white;
+    background-color: rgb(197, 53, 53);
+    border-radius: 25px;
+}
+
+#delete-btn:hover {
+    background-color: rgb(133, 27, 27);
+    cursor: pointer;
+}
+
+.inp {
+    background-color: rgb(250, 175, 162);
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    padding: 5px;
+}
+
+/* FOOTER */
+
+footer {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}

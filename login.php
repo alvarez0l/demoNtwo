@@ -11,16 +11,13 @@ if (!$stmt->rowCount()) {  //Если данные не соответствую
 }
 $user = $stmt->fetch(PDO::FETCH_ASSOC);  //Создаем переменную, куда будем извлекать данные юзера "$stmt->fetch()", далее определяем формат результата как Ассоц. массив
 
-if (password_verify($_POST['password'], $user['password'])) {  //Сверяем пароль из формы с паролем из БД
-    if (password_needs_rehash($user['password'], PASSWORD_DEFAULT)) {  //Проверка необходимости ре-хеширования пароля, полезно для обновления Хеша
-        $newHash = password_hash($_POST['password'], PASSWORD_DEFAULT);  //Обновляем хэш пароля
-        //Далее просто обновляем данные в БД
-        $stmt = pdo()->prepare('UPDATE `users` SET `password` = :password WHERE `login` = :login');
-        $stmt->execute([
-            'login' => $_POST['login'],
-            'password' => $newHash,
-        ]);
-    }
+if ($_POST['password'] === $user['password']) {  //Сверяем пароль из формы с паролем из БД
+    //Далее просто обновляем данные в БД
+    $stmt = pdo()->prepare('UPDATE `users` SET `password` = :password WHERE `login` = :login');
+    $stmt->execute([
+        'login' => $_POST['login'],
+        'password' => $_POST['password'],
+    ]);
     $_SESSION['user_id'] = $user['id'];  //Сохраняем пользователя в Сессии
     header('Location: index.php');  //Переводим на главную страницу
     die;

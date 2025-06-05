@@ -45,7 +45,7 @@ if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
 $stmt = pdo()->prepare("INSERT INTO `users` (`login`, `password`, `firstName`, `lastName`, `phone`, `email`) VALUES (:login, :password, :fName, :lName, :phone, :email)"); //Создаем переменную, обращаемся к PDO, кт. готовит SQL-запрос в БД
 $stmt->execute([ //Выполняет подготовленный запрос, передавая значения для подстановки в массив
     'login' => $_POST['login'],  //Имя
-    'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),  //Захешированный пароль при помощи функции password_hash
+    'password' => $_POST['password'],
     'fName' => $_POST['fName'],  //Имя
     'lName' => $_POST['lName'],  //Фамилия
     'phone' => $_POST['phone'],  //Телефон

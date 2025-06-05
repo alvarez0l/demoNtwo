@@ -40,31 +40,26 @@
             if ($user == null) { 
                 header('Location: log_form.php');
             }
-            if (($_POST['date'] == null) || ($_POST['peoples'] == null) || $_POST['phone'] == null) {  //Валидация данных на странице формирования заказа
+            if (($_POST['date'] == null) || ($_POST['peoples'] == null) || $_POST['phone'] == null) {
                 header('Location: orderAdd_form.php');
                 die;
             };
-
             require_once __DIR__.'/session.php';
             $user = null;
             if (check_auth()) {
-                // Получим данные пользователя по сохранённому идентификатору
                 $stmt = pdo()->prepare("SELECT * FROM `users` WHERE `id` = :id");
                 $stmt->execute(['id' => $_SESSION['user_id']]);
                 $user = $stmt->fetch(PDO::FETCH_ASSOC);
             }
 
             require_once 'connect.php';
-
             $date = $_POST['date'];
             $peoples = $_POST['peoples'];
             $phone = $_POST['phone'];
             $user_id = $user['id'];
-
             mysqli_query($connectDB, "INSERT INTO `orders` (`id`, `date`, `peoples`, `phone`, `userid`)
             VALUES (NULL, '$date', '$peoples', '$phone', '$user_id')");
             echo "Готово! Ваш заказ находится на странице Заказы, администраторы в скором времени проверят и одобрят его.";
-            // sleep(2);
         ?>
     </div>
 </body>
